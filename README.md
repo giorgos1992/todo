@@ -1,79 +1,53 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Project Name
 
-# Getting Started
+## Introduction
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This project is a [React Native](https://reactnative.dev) application developed as part of an interview exercise. It was bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-## Step 1: Start the Metro Server
+## The approach
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+In order to achieve the best to follow the best practices, I started by setting up different code quality tools for the codebase.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+I have added typescript for strict typing, prettier for code formatting, jest and react-testing-library for unit testing and sonar for code coverage, code smells and vulnerabilities.
 
-```bash
-# using npm
-npm start
+In addition, I have set up a pre-commit hooks using husky, that will automaticaly format all the changed files as well as running all the typescript, eslint and test checks to ensure that nothing is merged that can potentially break the app.
 
-# OR using Yarn
-yarn start
-```
 
-## Step 2: Start your Application
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Installation
 
-### For Android
+To install and run this project, you will need to follow these steps:
 
-```bash
-# using npm
-npm run android
+1. Ensure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step. It is important to say that for android, minimum JAVA 17 is required.
+2. Clone this repository to your local machine.
+3. Navigate to the project directory and install dependencies with `yarn install`.
+4. Start the Metro server with `yarn start`.
+5. In a new terminal, start the application with `yarn android` or `yarn pod:install && yarn ios` for Android or iOS respectively.
 
-# OR using Yarn
-yarn android
-```
+## Usage
 
-### For iOS
+After you have started the application, you can star interracting with the application.
 
-```bash
-# using npm
-npm run ios
+### TodoLists
 
-# OR using Yarn
-yarn ios
-```
+In the first screen you can see the TodoLists screen. If there are any lists already created, you will see a list of them.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Above the list, there is a button that triggers a modal so a user can add a new list. By swipping a TodoList, the user can either edit or delete a list.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+By clicking a TodoList, the user will be navigated to the TodoList screen.
 
-## Step 3: Modifying your App
+### TodoList
 
-Now that you have successfully run the app, let's modify it.
+In the TodoList screen the user can see all the items associated with a specific list.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+At the top there are two actions.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+At the left there is an IconButton where if clicked, a menu is shown so a user can either sort the items automaticaly or by creationDate, or hide/show the completed items.
 
-## Congratulations! :tada:
+At the right hand size, there is a button so a user can add new item to the list. If the value is empty, the input is highlighted and the done button is disabled.
 
-You've successfully run and modified your React Native App. :partying_face:
+Below this section, the user can find all the items of the list. The items have 3 statuses. ACTIVE, INACTIVE and EDIT. By clicking an item, status is changed from ACTIVE to INACTIVE and vice versa. By swiping an item, the user can either edit or delete it.
 
-### Now what?
+In edit mode, the card is being replaced by an input which acts the same way as the input in the dialog. To ensure this, the Input component was build as a reusable component. The only difference is that, because the edit item is not in a dialog, there is no submit button, hence I have added an IconButton that can be enabled using a prop which when clicked, the change is submitted.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+As soon as the user puts the application in background, I trigger a push notification that will be shown after 10 seconds.
