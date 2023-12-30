@@ -103,17 +103,18 @@ const TodoList = () => {
   };
 
   const todoItems = () => {
+    const todoListItems = [...(todoList?.items ?? [])];
     if (todoItemsManipulation === ITODO_LISTS_MANIPULATION.ALPHABETICAL) {
-      return todoList?.items.sort((a, b) => a.title.localeCompare(b.title));
+      return todoListItems.sort((a, b) => a.title.localeCompare(b.title));
     } else if (todoItemsManipulation === ITODO_LISTS_MANIPULATION.DATE) {
-      return todoList?.items.sort((a, b) => a.dateAdded - b.dateAdded);
+      return todoListItems.sort((a, b) => a.dateAdded - b.dateAdded);
     } else if (
       todoItemsManipulation === ITODO_LISTS_MANIPULATION.HIDE_COMPLETED &&
       hideCompleted
     ) {
-      return todoList?.items.filter((item) => item.status !== IStatus.INACTIVE);
+      return todoListItems.filter((item) => item.status !== IStatus.INACTIVE);
     } else {
-      return todoList?.items;
+      return todoListItems;
     }
   };
 

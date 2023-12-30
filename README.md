@@ -22,7 +22,9 @@ To install and run this project, you will need to follow these steps:
 2. Clone this repository to your local machine.
 3. Navigate to the project directory and install dependencies with `yarn install`.
 4. Start the Metro server with `yarn start`.
-5. In a new terminal, start the application with `yarn android` or `yarn pod:install && yarn ios` for Android or iOS respectively.
+5.1 In a new terminal, start the application with `yarn android`.
+5.2 In a new terminal, run `xcrun simctl list devices` to find a list with the available ios devices. `yarn pod:install && yarn ios --simulator="{iphone model}"` e.g.`yarn ios --simulator="iPhone 14"`.
+
 
 ## Usage
 
@@ -51,3 +53,5 @@ Below this section, the user can find all the items of the list. The items have 
 In edit mode, the card is being replaced by an input which acts the same way as the input in the dialog. To ensure this, the Input component was build as a reusable component. The only difference is that, because the edit item is not in a dialog, there is no submit button, hence I have added an IconButton that can be enabled using a prop which when clicked, the change is submitted.
 
 As soon as the user puts the application in background, I trigger a push notification that will be shown after 10 seconds.
+
+In addition to redux for state management, I also use redux-persist, which manage the transfer and synchronisation of redux state and async-storage, in order to persist the data even if the application is closed.
