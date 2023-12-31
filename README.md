@@ -26,6 +26,10 @@ To install and run this project, you will need to follow these steps:
 5.2 In a new terminal, run `xcrun simctl list devices` to find a list with the available ios devices. `yarn pod:install && yarn ios --simulator="{iphone model}"` e.g.`yarn ios --simulator="iPhone 14"`.
 
 
+## Demo
+
+https://drive.google.com/file/d/16XmEgUBo4H_CkA5_OVE9U2U6twPS1AnB/view?usp=drive_link
+
 ## Usage
 
 After you have started the application, you can star interracting with the application.
