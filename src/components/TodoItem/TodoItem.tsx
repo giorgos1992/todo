@@ -1,5 +1,5 @@
 import React, { Dispatch } from "react";
-import { Text, View } from "react-native";
+import { Animated, Text, View } from "react-native";
 import { styles } from "./TodoItem.styles";
 
 import Action from "../Action";
@@ -22,7 +22,19 @@ export type IProps = {
   testID?: string;
 };
 
-const TodoItemActions = ({ progress, close, onDelete, onDone }: any) => {
+type ITodoItemActionsProps = {
+  progress: Animated.AnimatedInterpolation<number>;
+  close: () => void;
+  onDelete: () => void;
+  onDone: () => void;
+};
+
+const TodoItemActions = ({
+  progress,
+  close,
+  onDelete,
+  onDone,
+}: ITodoItemActionsProps) => {
   return (
     <View style={styles.actionContainer}>
       <Action

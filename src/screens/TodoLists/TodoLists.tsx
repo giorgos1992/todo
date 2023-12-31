@@ -1,11 +1,11 @@
 import { COLORS, MEDIUM_ICON } from "@constants/styles";
-import { FlatList, Text, View } from "react-native";
+import { Animated, FlatList, Text, View } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { Button } from "react-native-paper";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "src/store";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { useState } from "react";
+import { Dispatch, useState } from "react";
 import {
   createTodoListAction,
   deleteTodoListAction,
@@ -22,6 +22,58 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AppNavigatorParamList } from "src/navigation/AppNavigation";
 import { ITodoList } from "src/store/todoLists/todoLists.types";
 import { formatDate } from "@utils/dateUtils";
+
+type ITodoListsActionsProps = {
+  progress: Animated.AnimatedInterpolation<number>;
+  close: () => void;
+  todoList: ITodoList;
+  setEditTodoList: Dispatch<ITodoList | undefined>;
+  setValue: Dispatch<string>;
+  setIsModalVisible: Dispatch<boolean>;
+};
+
+const TodoListActions = ({
+  progress,
+  close,
+  todoList,
+  setEditTodoList,
+  setValue,
+  setIsModalVisible,
+}: ITodoListsActionsProps) => {
+  const dispatch = useDispatch();
+  return (
+    <View style={styles.actionContainer}>
+      <Action
+        testId="delete-action"
+        text={"Delete"}
+        color={COLORS.red}
+        onPress={() => {
+          dispatch(deleteTodoListAction(todoList));
+          close();
+        }}
+        x={200}
+        progress={progress}
+        icon={<DeleteIcon width={MEDIUM_ICON} height={MEDIUM_ICON} />}
+      />
+      <Action
+        text={"Edit"}
+        testId="edit-action"
+        color={COLORS.lightBlue}
+        onPress={() => {
+          setEditTodoList(todoList);
+          setValue(todoList.name);
+          setIsModalVisible(true);
+          close();
+        }}
+        x={200}
+        progress={progress}
+        icon={
+          <EditIcon color="white" width={MEDIUM_ICON} height={MEDIUM_ICON} />
+        }
+      />
+    </View>
+  );
+};
 
 const TodoLists = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -41,42 +93,6 @@ const TodoLists = () => {
 
   const handleEditTodoList = () => {
     dispatch(editTodoListAction({ id: editTodoList?.id ?? "", name: value }));
-  };
-
-  const TodoListActions = ({ progress, close, todoList }: any) => {
-    const dispatch = useDispatch();
-    return (
-      <View style={styles.actionContainer}>
-        <Action
-          testId="delete-action"
-          text={"Delete"}
-          color={COLORS.red}
-          onPress={() => {
-            dispatch(deleteTodoListAction(todoList));
-            close();
-          }}
-          x={200}
-          progress={progress}
-          icon={<DeleteIcon width={MEDIUM_ICON} height={MEDIUM_ICON} />}
-        />
-        <Action
-          text={"Edit"}
-          testId="edit-action"
-          color={COLORS.lightBlue}
-          onPress={() => {
-            setEditTodoList(todoList);
-            setValue(todoList.name);
-            setIsModalVisible(true);
-            close();
-          }}
-          x={200}
-          progress={progress}
-          icon={
-            <EditIcon color="white" width={MEDIUM_ICON} height={MEDIUM_ICON} />
-          }
-        />
-      </View>
-    );
   };
 
   return (
@@ -104,7 +120,12 @@ const TodoLists = () => {
             id={item.id}
             friction={1}
             Action={TodoListActions}
-            props={{ todoList: item }}
+            props={{
+              todoList: item,
+              setEditTodoList,
+              setValue,
+              setIsModalVisible,
+            }}
           >
             <RectButton
               style={styles.card}

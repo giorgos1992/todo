@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/store/todoLists/todoLists.slice.test.ts">
-    <testCase name="todoListsSlice should handle createTodoListAction" duration="8"/>
-    <testCase name="todoListsSlice should handle createTodoListAction when title is empty" duration="0"/>
-    <testCase name="todoListsSlice should handle deleteTodoListAction" duration="1"/>
-    <testCase name="todoListsSlice should handle editItemToTodoListAction" duration="0"/>
-    <testCase name="todoListsSlice should error when editItemToTodoListAction without title" duration="1"/>
-    <testCase name="todoListsSlice should handle editTodoListAction" duration="0"/>
-    <testCase name="todoListsSlice should handle addItemToTodoListAction" duration="1"/>
-    <testCase name="todoListsSlice should handle deleteItemToTodoListAction" duration="0"/>
+  <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Typography/Typography.test.tsx">
+    <testCase name="Typography renders children correctly when variant is body" duration="199"/>
+    <testCase name="Typography renders children correctly when variant is h1" duration="3"/>
+    <testCase name="Typography renders children correctly when variant is p" duration="7"/>
+    <testCase name="Typography applies custom style correctly" duration="15"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Checkbox/Checkbox.test.tsx">
-    <testCase name="test generic Checkbox component should render the component correctly" duration="251"/>
+    <testCase name="test generic Checkbox component should render the component correctly" duration="226"/>
     <testCase name="test generic Checkbox component should have border color" duration="3"/>
-    <testCase name="test generic Checkbox component should have the correct status" duration="7"/>
-    <testCase name="test generic Checkbox component should have the correct status when uncecked" duration="4"/>
+    <testCase name="test generic Checkbox component should have the correct status" duration="22"/>
+    <testCase name="test generic Checkbox component should have the correct status when uncecked" duration="8"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Input/Input.test.tsx">
-    <testCase name="test generic Input component should render the component correctly" duration="253"/>
-    <testCase name="test generic Input component should have the correct value" duration="3"/>
-    <testCase name="test generic Input component should call the setValue function when the text changes" duration="24"/>
+    <testCase name="test generic Input component should render the component correctly" duration="205"/>
+    <testCase name="test generic Input component should have the correct value" duration="4"/>
+    <testCase name="test generic Input component should call the setValue function when the text changes" duration="10"/>
     <testCase name="test generic Input component should have red border when value is empty" duration="3"/>
-    <testCase name="test generic Input component should disable icon when value is empty" duration="17"/>
-    <testCase name="test generic Input component should call the onCompleteEdit function when the icon is pressed" duration="5"/>
-  </file>
-  <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Typography/Typography.test.tsx">
-    <testCase name="Typography renders children correctly when variant is body" duration="180"/>
-    <testCase name="Typography renders children correctly when variant is h1" duration="17"/>
-    <testCase name="Typography renders children correctly when variant is p" duration="4"/>
-    <testCase name="Typography applies custom style correctly" duration="3"/>
+    <testCase name="test generic Input component should disable icon when value is empty" duration="18"/>
+    <testCase name="test generic Input component should call the onCompleteEdit function when the icon is pressed" duration="25"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Dialog/Dialog.test.tsx">
-    <testCase name="test generic Dialog component should render the Dialog component correctly" duration="264"/>
-    <testCase name="test generic Dialog component should call the onClose function when the left button is pressed" duration="14"/>
-    <testCase name="test generic Dialog component should call the onDone function when the right button is pressed" duration="15"/>
-    <testCase name="test generic Dialog component input should have the correct value" duration="20"/>
+    <testCase name="test generic Dialog component should render the Dialog component correctly" duration="252"/>
+    <testCase name="test generic Dialog component should call the onClose function when the left button is pressed" duration="13"/>
+    <testCase name="test generic Dialog component should call the onDone function when the right button is pressed" duration="47"/>
+    <testCase name="test generic Dialog component input should have the correct value" duration="12"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/utils/dateUtils.test.ts">
-    <testCase name="formatDate should format date in DD/MM/YYYY format by default" duration="3"/>
-    <testCase name="formatDate should format date in the specified format" duration="0"/>
+    <testCase name="formatDate should format date in DD/MM/YYYY format by default" duration="5"/>
+    <testCase name="formatDate should format date in the specified format" duration="1"/>
+  </file>
+  <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/store/todoLists/todoLists.slice.test.ts">
+    <testCase name="todoListsSlice should handle createTodoListAction" duration="3"/>
+    <testCase name="todoListsSlice should handle createTodoListAction when title is empty" duration="1"/>
+    <testCase name="todoListsSlice should handle deleteTodoListAction" duration="0"/>
+    <testCase name="todoListsSlice should handle editItemToTodoListAction" duration="1"/>
+    <testCase name="todoListsSlice should error when editItemToTodoListAction without title" duration="1"/>
+    <testCase name="todoListsSlice should handle editTodoListAction" duration="0"/>
+    <testCase name="todoListsSlice should handle addItemToTodoListAction" duration="0"/>
+    <testCase name="todoListsSlice should handle deleteItemToTodoListAction" duration="1"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Swipeable/Swipeable.test.tsx">
-    <testCase name="test generic Swipeable component should render the component correctly" duration="43"/>
+    <testCase name="test generic Swipeable component should render the component correctly" duration="28"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/Action/Action.test.tsx">
-    <testCase name="test generic Action component should render the component correctly" duration="42"/>
+    <testCase name="test generic Action component should render the component correctly" duration="28"/>
     <testCase name="test generic Action component should call the onPress function when the rectButton is pressed" duration="4"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/components/TodoItem/TodoItem.test.tsx">
-    <testCase name="TodoItem renders the todo item correctly" duration="38"/>
+    <testCase name="TodoItem renders the todo item correctly" duration="37"/>
     <testCase name="TodoItem calls the editItemToTodoListAction when clicked" duration="12"/>
-    <testCase name="TodoItem calls the deleteItemToTodoListAction when delete action is pressed" duration="11"/>
+    <testCase name="TodoItem calls the deleteItemToTodoListAction when delete action is pressed" duration="10"/>
     <testCase name="TodoItem calls the editItemToTodoListAction when edit action is pressed" duration="7"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/screens/TodoLists/TodoLists.test.tsx">
-    <testCase name="TodoLists renders correctly" duration="64"/>
-    <testCase name="TodoLists handles new todo list creation" duration="45"/>
-    <testCase name="TodoLists handles editing a todo list" duration="28"/>
+    <testCase name="TodoLists renders correctly" duration="62"/>
+    <testCase name="TodoLists handles new todo list creation" duration="40"/>
+    <testCase name="TodoLists handles editing a todo list" duration="31"/>
     <testCase name="TodoLists handles deleting a todo list" duration="11"/>
   </file>
   <file path="/Users/giorgosioannidis/Sites/ocean/todo/src/screens/TodoList/TodoList.test.tsx">
-    <testCase name="test TodoList component should render the component correctly" duration="62"/>
-    <testCase name="test TodoList component Dialog should be visible when add new button is pressed" duration="24"/>
-    <testCase name="test TodoList component should render the component correctly" duration="5"/>
-    <testCase name="test TodoList component Dialog should be visible when add new button is pressed" duration="17"/>
-    <testCase name="test TodoList component should handle adding a new item to the todo list" duration="104"/>
-    <testCase name="test TodoList component should handle closing the add new item Dialog" duration="13"/>
-    <testCase name="test TodoList component should handle editing a todo item" duration="89"/>
-    <testCase name="test TodoList filter actions test sort alphabetically" duration="38"/>
-    <testCase name="test TodoList filter actions test sort date added" duration="30"/>
-    <testCase name="test TodoList filter actions test hide completed" duration="29"/>
+    <testCase name="test TodoList component should render the component correctly" duration="60"/>
+    <testCase name="test TodoList component Dialog should be visible when add new button is pressed" duration="26"/>
+    <testCase name="test TodoList component should render the component correctly" duration="6"/>
+    <testCase name="test TodoList component Dialog should be visible when add new button is pressed" duration="16"/>
+    <testCase name="test TodoList component should handle adding a new item to the todo list" duration="109"/>
+    <testCase name="test TodoList component should handle closing the add new item Dialog" duration="14"/>
+    <testCase name="test TodoList component should handle editing a todo item" duration="86"/>
+    <testCase name="test TodoList filter actions test sort alphabetically" duration="41"/>
+    <testCase name="test TodoList filter actions test sort date added" duration="34"/>
+    <testCase name="test TodoList filter actions test hide completed" duration="30"/>
   </file>
 </testExecutions>
