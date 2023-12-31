@@ -47,7 +47,7 @@ At the top there are two actions.
 
 At the left there is an IconButton where if clicked, a menu is shown so a user can either **_sort the items alphabetically or by creationDate_**, or **_hide/show the completed items_**.
 
-At the right hand size, there is a button so a user can **_add new item to the list_**. If the value is **_empty, the input is highlighted, and the 'Done' button is disabled_**.
+At the right hand side, there is a button so a user can **_add new item to the list_**. If the value is **_empty, the input is highlighted, and the 'Done' button is disabled_**.
 
 Below this section, the user can find all the items of the list. The items have 3 statuses. ACTIVE, INACTIVE and EDIT. By **_clicking_** an item, status is **_changed from ACTIVE to INACTIVE and vice versa_**. By **_swiping_** an item, the user can either **_edit or delete_** it.
 
@@ -65,7 +65,7 @@ As mentioned above, I have used several tools to ensure the best code quality po
 
 1. **_Typescript_** is a statically typed superset of JavaScript that compiles to plain JavaScript. Having strict types helps catch errors during development, improves code readability, and provides better tooling support.
 1. **_Eslint_** is a popular JavaScript linter that helps identify and fix common coding errors and enforce coding standards.
-1. **_Husky_** ia a Git hook tool that allows you to run scripts before committing or pushing code. In this project, Husky is used to set up a pre-commit hook that formats the changed files and runs TypeScript, ESLint, and test checks, acting as a proactive shield, ensuring that only working and formatted code is merged.
+1. **_Husky_** is a Git hook tool that allows you to run scripts before committing or pushing code. In this project, Husky is used to set up a pre-commit hook that formats the changed files and runs TypeScript, ESLint, and test checks, acting as a proactive shield, ensuring that only working and formatted code is merged.
 1. **_jest_** is a JavaScript testing framework that provides a simple and powerful way to write unit tests for your code.
 1. **_react-testing-library_** is a Javascript library used for testing React/React-Native components. Using it with jest, it gives you the ability to test user interractions by firing events like pressing a button or editing a textfield, which enables meaningful test and side-effects of specific actions
 1. **_Sonarqube_** is a static code analysis tool that provides insights into code quality, code smells, vulnerabilities, and code coverage. I am attaching a screenshot of the latest run on my sonarqube check, displaying the results of the analysis, including final numbers of code coverage and code duplication.
