@@ -56,6 +56,8 @@ Below this section, the user can find all the items of the list. The items have 
 
 In edit mode, the card is being replaced by an input which acts the same way as the input in the dialog. To ensure this, the Input component was build as a reusable component. The only difference is that, because the edit item is not in a dialog, there is no submit button, hence I have added an IconButton that can be enabled using a prop which when clicked, the change is submitted.
 
+### Extra
+
 As soon as the user puts the application in background, I trigger a push notification that will be shown after 10 seconds.
 
 In addition to redux for state management, I also use redux-persist, which manage the transfer and synchronisation of redux state and async-storage, in order to persist the data even if the application is closed.
